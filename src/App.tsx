@@ -115,6 +115,6 @@ export default function App() {
       {view === "about" && <AboutView />}
       {view === "share" && <ShareView onMessage={setToast} />}
     </main>
-    <div className={`toast ${toast ? "show" : ""}`} role="status" aria-live="polite">{toast}</div>
+    {toast && <div className="toast show" role="status" aria-live="polite">{toast}</div>}
   </div>;
 }
