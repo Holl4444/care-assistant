@@ -1,3 +1,12 @@
 .content {
   min-width: 0;
 }
+
+:global(.interest-list) { display: grid; gap: 12px; }
+:global(.interest-item) { display: flex; gap: 14px; padding: 20px; border-radius: 18px; background: var(--paper); box-shadow: var(--shadow); }
+:global(.interest-item > div) { min-width: 0; }
+:global(.interest-icon) { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border-radius: 13px; color: var(--teal-dark); background: var(--soft); font-size: 1.4rem; }
+:global(.interest-item:nth-child(2) .interest-icon) { background: #fae9df; }
+:global(.interest-item:nth-child(3) .interest-icon) { background: #e8e5f1; }
+:global(.interest-item:nth-child(4) .interest-icon) { background: #f6edce; }
+:global(.interest-item p) { color: var(--muted); font-size: .86rem; line-height: 1.5; margin-top: 6px; overflow-wrap: anywhere; }

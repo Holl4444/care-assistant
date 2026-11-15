@@ -6,6 +6,7 @@ import BottomNav from "./components/BottomNav";
 import HomeView from "./components/HomeView";
 import PlannerView from "./components/PlannerView";
 import ProjectsView from "./components/ProjectsView";
+import ShareView from "./components/ShareView";
 import TipsView from "./components/TipsView";
 import styles from "./App.module.css";
 
@@ -112,6 +113,7 @@ export default function App() {
       {view === "tips" && <TipsView />}
       {view === "projects" && <ProjectsView />}
       {view === "about" && <AboutView />}
+      {view === "share" && <ShareView onMessage={setToast} />}
     </main>
     <div className={`toast ${toast ? "show" : ""}`} role="status" aria-live="polite">{toast}</div>
   </div>;
