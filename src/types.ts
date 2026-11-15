@@ -1,4 +1,4 @@
-export type View = "home" | "planner" | "tips" | "projects" | "about";
+export type View = "home" | "planner" | "tips" | "projects" | "about" | "share";
 export type StageId = "morning" | "afternoon" | "evening";
 export type Activity = { icon: string; group: string; title: string; text: string };
 export type Stage = { id: StageId; label: string; icon: string; subtitle: string };

@@ -1,3 +1,9 @@
 .content {
   min-width: 0;
 }
+
+:global(.project-list) { display: grid; gap: 12px; }
+:global(.project-item) { display: flex; gap: 14px; padding: 18px; border-radius: 18px; background: var(--paper); box-shadow: var(--shadow); }
+:global(.project-item > div) { min-width: 0; }
+:global(.project-item .activity-icon) { flex: 0 0 38px; margin: 0; }
+:global(.project-item p) { color: var(--muted); font-size: .86rem; line-height: 1.48; margin-top: 6px; overflow-wrap: anywhere; }
