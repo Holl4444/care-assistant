@@ -30,17 +30,45 @@
   color: rgba(255, 255, 255, 0.95);
   background: transparent;
   cursor: pointer;
-  font-size: 0.67rem;
+  min-height: 44px;
+  font-size: var(--text-meta);
   font-weight: 600;
 }
 :global(.nav-item span:first-child) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+.homeIcon,
+.navIcon {
+  width: 24px;
+  min-width: 24px;
+  height: 20px;
   font-size: 1.35rem;
-  line-height: 1;
+}
+.homeIcon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+:global(.nav-item span:last-child) {
+  line-height: 1.1;
 }
 :global(.nav-item.active) {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.18);
   font-weight: 700;
+}
+:global(.nav-item:focus-visible) {
+  outline: 3px solid #fff4c7;
+  outline-offset: 2px;
 }
 @media (min-width: 760px) {
   :global(.bottom-nav) {

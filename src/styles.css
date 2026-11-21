@@ -1,6 +1,6 @@
 :root {
   --ink: #243a36;
-  --muted: #64736e;
+  --muted: #53645f;
   --soft: #edf2eb;
   --paper: #fffdf8;
   --cream: #f5f7f2;
@@ -8,12 +8,16 @@
   --teal-dark: #35675d;
   --coral: #d98668;
   --shadow: 0 12px 30px rgba(49, 77, 67, 0.08);
-  font-family:
-    "Segoe UI",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
+  --font-body: "Lato", "Segoe UI", system-ui, sans-serif;
+  --font-heading: "Karla", "Trebuchet MS", sans-serif;
+  --text-meta: 0.78rem;
+  --text-small: 0.875rem;
+  --text-body: 1rem;
+  --text-large: 1.125rem;
+  --text-h3: 1.25rem;
+  --text-h2: clamp(1.7rem, 6vw, 2.25rem);
+  --text-h1: 1.65rem;
+  font-family: var(--font-body);
   color: var(--ink);
   background: var(--cream);
 }
@@ -28,6 +32,52 @@ body {
 }
 button {
   font: inherit;
+  min-height: 44px;
+}
+input,
+textarea,
+select {
+  min-height: 52px;
+  width: 100%;
+  border: 1px solid rgba(49, 77, 67, 0.12);
+  border-radius: 12px;
+  padding: 12px;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+}
+textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+select {
+  appearance: none;
+  padding-right: 38px;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #61706b;
+  opacity: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+}
+label:not(.check-label) {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  color: var(--ink);
+  font-size: var(--text-body);
+  font-weight: 700;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 3px;
 }
 h1,
 h2,
@@ -37,12 +87,12 @@ p {
 }
 h1,
 h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-heading);
   letter-spacing: -0.04em;
   font-weight: 600;
 }
 h1 {
-  font-size: 1.65rem;
+  font-size: var(--text-h1);
 }
 h1 span {
   color: var(--coral);
@@ -50,12 +100,17 @@ h1 span {
   font-size: 1.35rem;
 }
 h2 {
-  font-size: clamp(1.7rem, 6vw, 2.25rem);
+  font-size: var(--text-h2);
   line-height: 1.08;
 }
 h3 {
-  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
   line-height: 1.25;
+}
+p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 .app-shell {
   max-width: 720px;
@@ -69,8 +124,8 @@ h3 {
   margin-bottom: 28px;
 }
 .eyebrow {
-  color: var(--teal);
-  font-size: 0.68rem;
+  color: var(--teal-dark);
+  font-size: var(--text-meta);
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -79,13 +134,13 @@ h3 {
 .muted {
   color: var(--muted);
   line-height: 1.5;
-  font-size: 0.92rem;
+  font-size: var(--text-body);
 }
 .icon-button {
   border: 0;
   border-radius: 50%;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   background: var(--paper);
   color: var(--teal-dark);
   box-shadow: var(--shadow);

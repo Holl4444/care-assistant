@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { ProjectIdea } from "../types";
 import { createProject, deleteProject, listProjects, updateProject } from "../api";
+import PrimaryButton from "./PrimaryButton";
 import styles from "./ProjectsView.module.css";
 
 export default function ProjectsView() {
@@ -44,8 +45,8 @@ export default function ProjectsView() {
     }
   }
 
-  async function remove(id: string) {
-    if (!window.confirm("Delete this project idea?")) return;
+  async function remove(id: string, title: string) {
+    if (!window.confirm(`Delete "${title}"?`)) return;
     try {
       await deleteProject(id);
       await refresh();
@@ -70,25 +71,29 @@ export default function ProjectsView() {
         </p>
       </div>
       <div className={styles.form}>
-        <input
-          aria-label="Project title"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-          placeholder="Project title"
-        />
-        <textarea
-          aria-label="Project description"
-          value={description}
-          onChange={(event) => setDescription(event.target.value)}
-          placeholder="Description"
-          rows={3}
-        />
-        <button className="primary-button" type="button" onClick={save} disabled={!title.trim()}>
+        <label className={styles.field}>
+          <span>Project title</span>
+          <input
+            value={title}
+            onChange={(event) => setTitle(event.target.value)}
+            placeholder="Project title"
+          />
+        </label>
+        <label className={styles.field}>
+          <span>Description</span>
+          <textarea
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
+            placeholder="Description"
+            rows={3}
+          />
+        </label>
+        <PrimaryButton onClick={save} disabled={!title.trim()}>
           {editingId ? "Save changes" : "Add project"}
-          <span aria-hidden="true">+</span>
-        </button>
+        </PrimaryButton>
         {editingId && (
           <button
+            className={styles.cancelButton}
             type="button"
             onClick={() => {
               setEditingId(null);
@@ -118,10 +123,18 @@ export default function ProjectsView() {
                 <h3>{item.title}</h3>
                 {item.description && <p>{item.description}</p>}
                 <div className={styles.actions}>
-                  <button type="button" onClick={() => edit(item)}>
+                  <button
+                    type="button"
+                    onClick={() => edit(item)}
+                    aria-label={`Edit ${item.title}`}
+                  >
                     Edit
                   </button>
-                  <button type="button" onClick={() => remove(item.id)}>
+                  <button
+                    type="button"
+                    onClick={() => remove(item.id, item.title)}
+                    aria-label={`Delete ${item.title}`}
+                  >
                     Delete
                   </button>
                 </div>

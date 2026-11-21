@@ -1,5 +1,6 @@
 import { activities, stages } from "../data";
 import type { DayState, StageId } from "../types";
+import PrimaryButton from "./PrimaryButton";
 import styles from "./PlannerView.module.css";
 
 type Props = {
@@ -38,6 +39,7 @@ export default function PlannerView({
             key={stage.id}
             className={`stage-tab ${activeStage === stage.id ? "active" : ""}`}
             type="button"
+            aria-pressed={activeStage === stage.id}
             onClick={() => onStageChange(stage.id)}
           >
             <span aria-hidden="true">{stage.icon}</span>
@@ -77,14 +79,9 @@ export default function PlannerView({
           );
         })}
       </div>
-      <button
-        className="primary-button wide-button"
-        type="button"
-        disabled={!hasSelections}
-        onClick={onSave}
-      >
+      <PrimaryButton disabled={!hasSelections} onClick={onSave}>
         Add to today’s activities
-      </button>
+      </PrimaryButton>
       <div className="planned-stages">
         {stages.map((stage) => {
           const items = day.plans[stage.id] || [];

@@ -1,4 +1,5 @@
 import { QRCodeSVG } from "qrcode.react";
+import PrimaryButton from "./PrimaryButton";
 import styles from "./ShareView.module.css";
 
 type Props = { onMessage: (message: string) => void };
@@ -28,18 +29,18 @@ export default function ShareView({ onMessage }: Props) {
         </p>
       </div>
       <div className={styles.card}>
-        <QRCodeSVG
-          value={appUrl}
-          size={220}
-          bgColor="#fffdf8"
-          fgColor="#243a36"
-          level="M"
-          includeMargin
-        />
+        <div role="img" aria-label={`QR code for the Carekin app at ${appUrl}`}>
+          <QRCodeSVG
+            value={appUrl}
+            size={220}
+            bgColor="#fffdf8"
+            fgColor="#243a36"
+            level="M"
+            includeMargin
+          />
+        </div>
         <p className={styles.url}>{appUrl}</p>
-        <button className="primary-button" type="button" onClick={copyLink}>
-          Copy app link
-        </button>
+        <PrimaryButton onClick={copyLink}>Copy app link</PrimaryButton>
       </div>
     </section>
   );

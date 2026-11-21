@@ -17,13 +17,13 @@
 }
 :global(.tip-number) {
   color: var(--coral);
-  font-family: Georgia, serif;
+  font-family: "Karla", "Trebuchet MS", sans-serif;
   font-size: 1.3rem;
   line-height: 1;
 }
 :global(.tip-item p) {
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: var(--text-body);
   line-height: 1.48;
   margin: 0;
 }
@@ -34,12 +34,12 @@
   background: #e9eee5;
 }
 :global(.support-card h3) {
-  font-family: Georgia, serif;
+  font-family: "Karla", "Trebuchet MS", sans-serif;
   font-size: 1.25rem;
   margin-bottom: 8px;
 }
 :global(.support-card p:last-child) {
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: var(--text-body);
   line-height: 1.5;
 }
