@@ -11,10 +11,10 @@
   width: min(calc(100% - 40px), 680px);
   justify-content: space-around;
   padding: 8px;
-  border: 1px solid rgba(49, 77, 67, 0.08);
+  border: 1px solid rgba(66, 62, 55, 0.18);
   border-radius: 22px;
-  background: var(--teal);
-  box-shadow: 0 10px 32px rgba(36, 58, 54, 0.16);
+  background: var(--main-dark);
+  box-shadow: 0 10px 32px rgba(66, 62, 55, 0.22);
   transform: translateX(-50%);
   backdrop-filter: blur(12px);
 }
@@ -58,6 +58,15 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+.navIcon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 :global(.nav-item span:last-child) {
   line-height: 1.1;
 }
@@ -67,7 +76,7 @@
   font-weight: 700;
 }
 :global(.nav-item:focus-visible) {
-  outline: 3px solid #fff4c7;
+  outline: 3px solid var(--accent-two);
   outline-offset: 2px;
 }
 @media (min-width: 760px) {

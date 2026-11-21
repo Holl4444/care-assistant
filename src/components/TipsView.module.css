@@ -31,7 +31,7 @@
   margin-top: 14px;
   padding: 20px;
   border-radius: 18px;
-  background: #e9eee5;
+  background: var(--soft);
 }
 :global(.support-card h3) {
   font-family: "Karla", "Trebuchet MS", sans-serif;

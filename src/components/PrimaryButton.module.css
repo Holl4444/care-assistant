@@ -9,7 +9,8 @@
   border-radius: 14px;
   padding: 13px 16px;
   color: white;
-  background: var(--teal);
+  background: var(--accent-one);
+  color: var(--main-dark);
   font-family: var(--font-heading);
   font-size: var(--text-body);
   font-weight: 700;
@@ -24,14 +25,14 @@
 
 .button:not(:disabled):hover,
 .button:not(:disabled):focus-visible {
-  background: var(--teal-dark);
-  box-shadow: 0 8px 18px rgba(49, 77, 67, 0.14);
+  background: var(--accent-one);
+  box-shadow: 0 8px 18px rgba(66, 62, 55, 0.18);
   transform: translateY(-1px);
 }
 
 .button:disabled {
-  color: #dfe6e2;
-  background: #8fa099;
+  color: var(--paper);
+  background: var(--accent-two);
   box-shadow: none;
   cursor: not-allowed;
   transform: none;

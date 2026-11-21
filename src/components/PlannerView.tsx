@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { activities, stages } from "../data";
 import type { DayState, StageId } from "../types";
 import PrimaryButton from "./PrimaryButton";
@@ -20,6 +21,15 @@ export default function PlannerView({
   onSelectionChange,
   onSave,
 }: Props) {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const updateVisibility = () => setShowBackToTop(window.scrollY > 300);
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", updateVisibility);
+  }, []);
+
   const draftSelection = draftSelections[activeStage] || [];
   const hasSelections = Object.values(draftSelections).some(
     (selection) => (selection || []).length > 0,
@@ -109,6 +119,16 @@ export default function PlannerView({
           );
         })}
       </div>
+      {showBackToTop && (
+        <button
+          className={styles.floating}
+          type="button"
+          aria-label="Back to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          ↑
+        </button>
+      )}
     </section>
   );
 }

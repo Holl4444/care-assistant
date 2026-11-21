@@ -1,13 +1,22 @@
 :root {
-  --ink: #243a36;
-  --muted: #53645f;
-  --soft: #edf2eb;
-  --paper: #fffdf8;
-  --cream: #f5f7f2;
-  --teal: #4b7d72;
-  --teal-dark: #35675d;
-  --coral: #d98668;
-  --shadow: 0 12px 30px rgba(49, 77, 67, 0.08);
+  /* Colour plan: main, secondary, and two accents. */
+  --main: #6e675f;
+  --main-dark: #423e37;
+  --secondary: #423e37;
+  --accent-one: #e3b23c;
+  --accent-two: #a39594;
+  --accent-one-soft: #ede3b4;
+  --accent-two-soft: #ddd6d5;
+
+  --ink: var(--secondary);
+  --muted: #6e675f;
+  --soft: #edebd7;
+  --paper: #edebd7;
+  --cream: #edebd7;
+  --teal: var(--main);
+  --teal-dark: var(--main-dark);
+  --coral: var(--accent-one);
+  --shadow: 0 12px 30px rgba(66, 62, 55, 0.12);
   --font-body: "Lato", "Segoe UI", system-ui, sans-serif;
   --font-heading: "Karla", "Trebuchet MS", sans-serif;
   --text-meta: 0.78rem;
@@ -39,7 +48,7 @@ textarea,
 select {
   min-height: 52px;
   width: 100%;
-  border: 1px solid rgba(49, 77, 67, 0.12);
+  border: 1px solid rgba(110, 103, 95, 0.24);
   border-radius: 12px;
   padding: 12px;
   font-family: var(--font-body);
@@ -58,7 +67,7 @@ select {
 }
 input::placeholder,
 textarea::placeholder {
-  color: #61706b;
+  color: var(--secondary);
   opacity: 1;
   font-family: var(--font-body);
   font-size: var(--text-body);

@@ -59,7 +59,14 @@
 }
 :global(.check-row input) {
   position: absolute;
+  inset: auto;
+  min-height: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
   opacity: 0;
+  pointer-events: none;
 }
 :global(.custom-check) {
   display: grid;
@@ -96,10 +103,9 @@
 }
 :global(.remove-activity:hover),
 :global(.remove-activity:focus-visible) {
-  color: #a45e50;
-  background: #fae9df;
-  outline: 3px solid var(--teal-dark);
-  outline-offset: 2px;
+  color: var(--main-dark);
+  background: transparent;
+  outline: none;
 }
 :global(.check-label:has(input:focus-visible) .custom-check) {
   outline: 3px solid var(--teal-dark);

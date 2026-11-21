@@ -61,6 +61,6 @@
   cursor: pointer;
 }
 .error {
-  color: #a84d36;
+  color: var(--accent-one);
   margin-bottom: 12px;
 }
