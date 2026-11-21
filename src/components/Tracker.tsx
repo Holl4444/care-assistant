@@ -26,17 +26,12 @@ export default function Tracker({ day, onToggle, onRemove }: Props) {
             {items.map((title) => {
               const checked = Boolean(day.completed[`${stage.id}:${title}`]);
               return (
-                <div
-                  className={`check-row ${checked ? "checked" : ""}`}
-                  key={title}
-                >
+                <div className={`check-row ${checked ? "checked" : ""}`} key={title}>
                   <label className="check-label">
                     <input
                       type="checkbox"
                       checked={checked}
-                      onChange={(event) =>
-                        onToggle(stage.id, title, event.target.checked)
-                      }
+                      onChange={(event) => onToggle(stage.id, title, event.target.checked)}
                     />
                     <span className="custom-check" aria-hidden="true">
                       ✓
