@@ -1,11 +1,10 @@
 import { QRCodeSVG } from "qrcode.react";
 import styles from "./ShareView.module.css";
 
-const appUrl = "https://care-assistant-blue.vercel.app/";
-
 type Props = { onMessage: (message: string) => void };
 
 export default function ShareView({ onMessage }: Props) {
+  const appUrl = `${window.location.origin}/carer`;
   async function copyLink() {
     if (!navigator.clipboard) {
       onMessage("Copy is not available here — use the link below");
@@ -20,16 +19,12 @@ export default function ShareView({ onMessage }: Props) {
   }
 
   return (
-    <section
-      className={`view active ${styles.share}`}
-      aria-labelledby="share-title"
-    >
+    <section className={`view active ${styles.share}`} aria-labelledby="share-title">
       <div className="page-heading">
         <p className="eyebrow">Take it with you</p>
-        <h2 id="share-title">Share Care assistant</h2>
+        <h2 id="share-title">Share Carekin</h2>
         <p className="muted">
-          Scan this code with a phone to open the app, then add it to the home
-          screen.
+          Scan this code with a phone to open the app, then add it to the home screen.
         </p>
       </div>
       <div className={styles.card}>
