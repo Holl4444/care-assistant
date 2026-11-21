@@ -16,7 +16,7 @@
 .url {
   max-width: 100%;
   color: var(--muted);
-  font-size: .75rem;
+  font-size: 0.75rem;
   overflow-wrap: anywhere;
   text-align: center;
 }

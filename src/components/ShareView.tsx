@@ -19,8 +19,33 @@ export default function ShareView({ onMessage }: Props) {
     }
   }
 
-  return <section className={`view active ${styles.share}`} aria-labelledby="share-title">
-    <div className="page-heading"><p className="eyebrow">Take it with you</p><h2 id="share-title">Share Care assistant</h2><p className="muted">Scan this code with a phone to open the app, then add it to the home screen.</p></div>
-    <div className={styles.card}><QRCodeSVG value={appUrl} size={220} bgColor="#fffdf8" fgColor="#243a36" level="M" includeMargin /><p className={styles.url}>{appUrl}</p><button className="primary-button" type="button" onClick={copyLink}>Copy app link</button></div>
-  </section>;
+  return (
+    <section
+      className={`view active ${styles.share}`}
+      aria-labelledby="share-title"
+    >
+      <div className="page-heading">
+        <p className="eyebrow">Take it with you</p>
+        <h2 id="share-title">Share Care assistant</h2>
+        <p className="muted">
+          Scan this code with a phone to open the app, then add it to the home
+          screen.
+        </p>
+      </div>
+      <div className={styles.card}>
+        <QRCodeSVG
+          value={appUrl}
+          size={220}
+          bgColor="#fffdf8"
+          fgColor="#243a36"
+          level="M"
+          includeMargin
+        />
+        <p className={styles.url}>{appUrl}</p>
+        <button className="primary-button" type="button" onClick={copyLink}>
+          Copy app link
+        </button>
+      </div>
+    </section>
+  );
 }
