@@ -22,9 +22,18 @@ export default function BottomNav({ view, onChange, isOwner }: Props) {
           key={id}
           className={`nav-item ${view === id ? "active" : ""}`}
           type="button"
+          aria-current={view === id ? "page" : undefined}
           onClick={() => onChange(id)}
         >
-          <span aria-hidden="true">{icon}</span>
+          <span className={id === "home" ? styles.homeIcon : styles.navIcon} aria-hidden="true">
+            {id === "home" ? (
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M3 11.5 12 4l9 7.5M5.5 10v9h13v-9M9.5 19v-6h5v6" />
+              </svg>
+            ) : (
+              icon
+            )}
+          </span>
           <span>{label}</span>
         </button>
       ))}

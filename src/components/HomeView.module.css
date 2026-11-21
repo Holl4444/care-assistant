@@ -22,7 +22,7 @@
   overflow-wrap: anywhere;
 }
 :global(.welcome-card .muted) {
-  color: rgba(255, 255, 255, 0.78);
+  color: #ffffff;
 }
 :global(.sun-mark) {
   display: flex;
@@ -59,7 +59,7 @@
 }
 :global(.count) {
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: var(--text-meta);
 }
 :global(.home-summary) {
   min-height: 92px;
@@ -73,7 +73,7 @@
   border-radius: 16px;
   color: var(--muted);
   background: #f0eee4;
-  font-size: 0.84rem;
+  font-size: 1rem;
   line-height: 1.4;
 }
 :global(.empty-state > span) {

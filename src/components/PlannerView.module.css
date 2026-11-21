@@ -26,7 +26,7 @@
   color: var(--muted);
   background: transparent;
   cursor: pointer;
-  font-size: 0.73rem;
+  font-size: var(--text-meta);
 }
 :global(.stage-tab span:first-child) {
   font-size: 1.15rem;
@@ -39,7 +39,7 @@
 }
 :global(.selection-status) {
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: var(--text-meta);
   margin: 0 2px 9px;
 }
 :global(.option-list) {
@@ -73,6 +73,14 @@
   box-shadow: 0 14px 28px rgba(49, 77, 67, 0.13);
   outline: none;
 }
+:global(.option-card:focus-visible) {
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 2px;
+}
+:global(.stage-tab:focus-visible) {
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 2px;
+}
 :global(.option-card .activity-icon) {
   flex: 0 0 38px;
   margin: 0;
@@ -87,12 +95,12 @@
 }
 :global(.option-card small) {
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: var(--text-small);
   margin-top: 3px;
 }
 :global(.option-card .activity-group) {
   color: var(--teal);
-  font-size: 0.62rem;
+  font-size: var(--text-meta);
   margin: 0 0 3px;
 }
 :global(.option-card.selected) {
@@ -151,12 +159,12 @@
   gap: 10px;
 }
 :global(.planned-stage h3) {
-  font-family: Georgia, serif;
-  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
 }
 :global(.planned-stage p) {
   color: var(--muted);
-  font-size: 0.74rem;
+  font-size: var(--text-meta);
   margin-top: 2px;
 }
 :global(.stage-dot) {
@@ -175,7 +183,7 @@
 }
 :global(.planned-stage li) {
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: var(--text-body);
   line-height: 1.4;
   padding-top: 4px;
 }

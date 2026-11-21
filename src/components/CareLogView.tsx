@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { CareCategory, CareLogEntry } from "../types";
+import PrimaryButton from "./PrimaryButton";
 import { createCareLog, deleteCareLog, listCareLogs, updateCareLog } from "../api";
 import styles from "./CareLogView.module.css";
 
@@ -82,8 +83,8 @@ export default function CareLogView() {
     }
   }
 
-  async function remove(id: string) {
-    if (!window.confirm("Delete this care-log entry?")) return;
+  async function remove(id: string, text: string) {
+    if (!window.confirm(`Delete "${text}"?`)) return;
     try {
       await deleteCareLog(id);
       await load(true);
@@ -100,35 +101,41 @@ export default function CareLogView() {
         <p className="muted">Add interests and activities that feel familiar or comforting.</p>
       </div>
       <div className={styles.composer}>
-        <input
-          aria-label="Care-log entry"
-          value={text}
-          onChange={(event) => setText(event.target.value)}
-          placeholder="What have you discovered?"
-        />
-        <input
-          aria-label="Optional web link"
-          type="url"
-          value={url}
-          onChange={(event) => setUrl(event.target.value)}
-          placeholder="Optional link (YouTube, website…)"
-        />
-        <div className={styles.selectWrap}>
-          <select
-            aria-label="Category"
-            value={category}
-            onChange={(event) => setCategory(event.target.value as CareCategory)}
-          >
-            {categories.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button className="primary-button" type="button" onClick={add} disabled={!text.trim()}>
+        <label className={styles.field}>
+          <span>What have you discovered?</span>
+          <input
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+            placeholder="Add a favourite, interest or helpful activity"
+          />
+        </label>
+        <label className={styles.field}>
+          <span>Optional web link</span>
+          <input
+            type="url"
+            value={url}
+            onChange={(event) => setUrl(event.target.value)}
+            placeholder="YouTube, website or another link"
+          />
+        </label>
+        <label className={styles.field}>
+          <span>Category</span>
+          <div className={styles.selectWrap}>
+            <select
+              value={category}
+              onChange={(event) => setCategory(event.target.value as CareCategory)}
+            >
+              {categories.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          </div>
+        </label>
+        <PrimaryButton onClick={add} disabled={!text.trim()}>
           Add to log<span aria-hidden="true">+</span>
-        </button>
+        </PrimaryButton>
       </div>
       {error && (
         <p className={styles.error} role="alert">
@@ -140,31 +147,34 @@ export default function CareLogView() {
           <article className={styles.entry} key={item.id}>
             {editingId === item.id ? (
               <div className={styles.edit}>
-                <input
-                  aria-label="Edit care-log entry"
-                  value={editText}
-                  onChange={(event) => setEditText(event.target.value)}
-                />
-                <input
-                  aria-label="Edit optional web link"
-                  type="url"
-                  value={editUrl}
-                  onChange={(event) => setEditUrl(event.target.value)}
-                  placeholder="Optional link"
-                />
-                <div className={styles.selectWrap}>
-                  <select
-                    aria-label="Edit category"
-                    value={editCategory}
-                    onChange={(event) => setEditCategory(event.target.value as CareCategory)}
-                  >
-                    {categories.map((entry) => (
-                      <option key={entry} value={entry}>
-                        {entry}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+                <label className={styles.field}>
+                  <span>Entry</span>
+                  <input value={editText} onChange={(event) => setEditText(event.target.value)} />
+                </label>
+                <label className={styles.field}>
+                  <span>Optional web link</span>
+                  <input
+                    type="url"
+                    value={editUrl}
+                    onChange={(event) => setEditUrl(event.target.value)}
+                    placeholder="Optional link"
+                  />
+                </label>
+                <label className={styles.field}>
+                  <span>Category</span>
+                  <div className={styles.selectWrap}>
+                    <select
+                      value={editCategory}
+                      onChange={(event) => setEditCategory(event.target.value as CareCategory)}
+                    >
+                      {categories.map((entry) => (
+                        <option key={entry} value={entry}>
+                          {entry}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </label>
                 <div className={styles.actions}>
                   <button type="button" onClick={() => saveEdit(item.id)}>
                     Save
@@ -189,15 +199,24 @@ export default function CareLogView() {
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Open link for ${item.text} in a new tab`}
                   >
                     Open link ↗
                   </a>
                 )}
                 <div className={styles.actions}>
-                  <button type="button" onClick={() => beginEdit(item)}>
+                  <button
+                    type="button"
+                    onClick={() => beginEdit(item)}
+                    aria-label={`Edit ${item.text}`}
+                  >
                     Edit
                   </button>
-                  <button type="button" onClick={() => remove(item.id)}>
+                  <button
+                    type="button"
+                    onClick={() => remove(item.id, item.text)}
+                    aria-label={`Delete ${item.text}`}
+                  >
                     Delete
                   </button>
                 </div>

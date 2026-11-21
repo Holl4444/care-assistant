@@ -1,4 +1,5 @@
 import type { DayState, StageId } from "../types";
+import PrimaryButton from "./PrimaryButton";
 import Tracker from "./Tracker";
 import styles from "./HomeView.module.css";
 
@@ -75,9 +76,9 @@ export default function HomeView({
           </div>
         )}
       </div>
-      <button className="primary-button wide-button" type="button" onClick={onPlan}>
+      <PrimaryButton onClick={onPlan}>
         Plan or change activities <span aria-hidden="true">→</span>
-      </button>
+      </PrimaryButton>
       <section className="quick-note">
         <div className="note-icon" aria-hidden="true">
           ✦

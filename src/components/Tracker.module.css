@@ -23,12 +23,12 @@
   font-size: 1.35rem;
 }
 :global(.review-heading h3) {
-  font-family: Georgia, serif;
+  font-family: "Karla", "Trebuchet MS", sans-serif;
   font-size: 1.1rem;
 }
 :global(.review-heading p) {
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: var(--text-meta);
   margin-top: 3px;
 }
 :global(.check-row) {
@@ -37,7 +37,7 @@
   gap: 8px;
   padding: 10px 12px 10px 18px;
   color: var(--ink);
-  font-size: 0.86rem;
+  font-size: var(--text-body);
   border-top: 1px solid #eef0eb;
 }
 :global(.check-label) {
@@ -84,6 +84,8 @@
 }
 :global(.remove-activity) {
   border: 0;
+  min-width: 44px;
+  min-height: 44px;
   padding: 5px 7px;
   border-radius: 8px;
   color: var(--muted);
@@ -96,5 +98,10 @@
 :global(.remove-activity:focus-visible) {
   color: #a45e50;
   background: #fae9df;
-  outline: none;
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 2px;
+}
+:global(.check-label:has(input:focus-visible) .custom-check) {
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 3px;
 }
