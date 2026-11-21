@@ -7,90 +7,30 @@ const activitySeeds = [
     "Favourite songs",
     "Familiar music from his younger years, roughly 1965–1980",
   ],
-  [
-    "♫",
-    "Music & sound",
-    "Favourite radio shows",
-    "A familiar voice or programme he used to love",
-  ],
-  [
-    "◌",
-    "Music & sound",
-    "Birdsong",
-    "Play softly and watch for a relaxed response",
-  ],
-  [
-    "◌",
-    "Music & sound",
-    "Sea or garden sounds",
-    "Calm recordings of places that feel familiar",
-  ],
-  [
-    "▤",
-    "Reading & talking",
-    "Favourite authors",
-    "Read aloud from a book he already knows",
-  ],
-  [
-    "▤",
-    "Reading & talking",
-    "Formula 1 updates",
-    "Share news about one of his interests",
-  ],
-  [
-    "▤",
-    "Reading & talking",
-    "Local news",
-    "Read a short article in a calm voice",
-  ],
-  [
-    "▤",
-    "Reading & talking",
-    "Old letters",
-    "Read familiar letters or cards together",
-  ],
+  ["♫", "Music & sound", "Favourite radio shows", "A familiar voice or programme he used to love"],
+  ["◌", "Music & sound", "Birdsong", "Play softly and watch for a relaxed response"],
+  ["◌", "Music & sound", "Sea or garden sounds", "Calm recordings of places that feel familiar"],
+  ["▤", "Reading & talking", "Favourite authors", "Read aloud from a book he already knows"],
+  ["▤", "Reading & talking", "Formula 1 updates", "Share news about one of his interests"],
+  ["▤", "Reading & talking", "Local news", "Read a short article in a calm voice"],
+  ["▤", "Reading & talking", "Old letters", "Read familiar letters or cards together"],
   [
     "▤",
     "Reading & talking",
     "Talk about his life",
     "Ask about his garden, motorbikes or other interests",
   ],
-  [
-    "▧",
-    "Photos",
-    "Look through photos",
-    "Spend a few quiet minutes looking together",
-  ],
-  [
-    "▧",
-    "Photos",
-    "Name people and places",
-    "Use short sentences and a calm voice",
-  ],
-  [
-    "♡",
-    "Touch & comfort",
-    "Hand massage",
-    "Use unscented or softly scented lotion",
-  ],
+  ["▧", "Photos", "Look through photos", "Spend a few quiet minutes looking together"],
+  ["▧", "Photos", "Name people and places", "Use short sentences and a calm voice"],
+  ["♡", "Touch & comfort", "Hand massage", "Use unscented or softly scented lotion"],
   [
     "♡",
     "Touch & comfort",
     "Gentle foot massage",
     "Only if this has always felt comfortable for him",
   ],
-  [
-    "♡",
-    "Touch & comfort",
-    "Warm flannel",
-    "Warm, not hot, on his face and hands",
-  ],
-  [
-    "♡",
-    "Touch & comfort",
-    "Brush hair or shave",
-    "Offer familiar grooming he would have wanted",
-  ],
+  ["♡", "Touch & comfort", "Warm flannel", "Warm, not hot, on his face and hands"],
+  ["♡", "Touch & comfort", "Brush hair or shave", "Offer familiar grooming he would have wanted"],
   [
     "✧",
     "Movement & comfort",
@@ -109,24 +49,9 @@ const activitySeeds = [
     "Warmth before movement",
     "Try a warm towel or movement after a bath",
   ],
-  [
-    "⌂",
-    "Environment",
-    "Open the curtains",
-    "Let in daylight and say good morning using his name",
-  ],
-  [
-    "⌂",
-    "Environment",
-    "Show the garden",
-    "Position the bed so he can see a window or garden",
-  ],
-  [
-    "⌂",
-    "Environment",
-    "Make the room calm",
-    "Keep things organised and turn off unwatched TV",
-  ],
+  ["⌂", "Environment", "Open the curtains", "Let in daylight and say good morning using his name"],
+  ["⌂", "Environment", "Show the garden", "Position the bed so he can see a window or garden"],
+  ["⌂", "Environment", "Make the room calm", "Keep things organised and turn off unwatched TV"],
   [
     "↺",
     "Care",
@@ -140,24 +65,9 @@ export const activities: Activity[] = activitySeeds
   .sort((a, b) => a.title.localeCompare(b.title));
 
 export const stages: Stage[] = [
-  {
-    id: "morning",
-    label: "Morning",
-    icon: "☼",
-    subtitle: "Start slowly and gently",
-  },
-  {
-    id: "afternoon",
-    label: "Afternoon",
-    icon: "☀",
-    subtitle: "A little comfort and movement",
-  },
-  {
-    id: "evening",
-    label: "Evening",
-    icon: "☾",
-    subtitle: "Settle into a calm night",
-  },
+  { id: "morning", label: "Morning", icon: "☼", subtitle: "Start slowly and gently" },
+  { id: "afternoon", label: "Afternoon", icon: "☀", subtitle: "A little comfort and movement" },
+  { id: "evening", label: "Evening", icon: "☾", subtitle: "Settle into a calm night" },
 ];
 
 export const tips = [
@@ -198,16 +108,8 @@ export const interests = [
     "Motorbikes",
     "Ask Allan about restoring classic Nortons, or share a familiar bike story or picture.",
   ],
-  [
-    "♫",
-    "Music",
-    "He likes Captain Beefheart, Joni Mitchell and classical music.",
-  ],
-  [
-    "◉",
-    "Radio",
-    "Radio 4 and David Sedaris are familiar listening favourites.",
-  ],
+  ["♫", "Music", "He likes Captain Beefheart, Joni Mitchell and classical music."],
+  ["◉", "Radio", "Radio 4 and David Sedaris are familiar listening favourites."],
   ["▣", "Sport", "He mostly enjoys Formula 1 racing, and also likes snooker."],
   [
     "▤",
