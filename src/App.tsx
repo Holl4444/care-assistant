@@ -13,7 +13,7 @@ import { usePwaInstall } from "./hooks/usePwaInstall";
 import styles from "./App.module.css";
 
 export default function App() {
-  const isOwner = !window.location.pathname.startsWith("/carer");
+  const isOwner = window.location.pathname.startsWith("/owner");
   const [view, setView] = useState<View>("home");
   const [toast, setToast] = useState("");
   const {
