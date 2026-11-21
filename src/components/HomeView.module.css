@@ -2,6 +2,23 @@
   min-width: 0;
 }
 
+.ownerShare {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 12px auto;
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 12px;
+  color: var(--main-dark);
+  background: var(--accent-one);
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: var(--text-small);
+  font-weight: 700;
+  min-height: 44px;
+}
+
 :global(.welcome-card) {
   display: flex;
   justify-content: space-between;

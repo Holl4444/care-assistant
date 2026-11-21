@@ -92,9 +92,11 @@ export default function App() {
             planned={planned}
             completedCount={completedCount}
             day={day}
+            isOwner={isOwner}
             onToggle={toggleCompleteWithToast}
             onRemove={removeActivityWithToast}
             onPlan={() => selectView("planner")}
+            onShare={() => selectView("share")}
           />
         )}
         {view === "planner" && (

@@ -8,9 +8,11 @@ type Props = {
   planned: string[];
   completedCount: number;
   day: DayState;
+  isOwner: boolean;
   onToggle: (stage: StageId, title: string, checked: boolean) => void;
   onRemove: (stage: StageId, title: string) => void;
   onPlan: () => void;
+  onShare: () => void;
 };
 
 export default function HomeView({
@@ -18,15 +20,23 @@ export default function HomeView({
   planned,
   completedCount,
   day,
+  isOwner,
   onToggle,
   onRemove,
   onPlan,
+  onShare,
 }: Props) {
   const isMorning = greeting === "Good morning";
   const isEvening = greeting === "Good evening";
 
   return (
     <section className={`view active ${styles.home}`} aria-labelledby="home-title">
+      {isOwner && (
+        <button className={styles.ownerShare} type="button" onClick={onShare}>
+          <span aria-hidden="true">↗</span>
+          Share
+        </button>
+      )}
       <div className="welcome-card">
         <div>
           <h2 id="home-title">{greeting}</h2>
