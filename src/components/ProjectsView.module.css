@@ -28,3 +28,42 @@
   margin-top: 6px;
   overflow-wrap: anywhere;
 }
+
+.form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.form input,
+.form textarea {
+  width: 100%;
+  border: 1px solid rgba(49, 77, 67, 0.12);
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+.form > button:not(.primary-button) {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.actions button {
+  border: 0;
+  padding: 4px 0;
+  background: transparent;
+  color: var(--teal);
+  font-weight: 700;
+  cursor: pointer;
+}
+.error {
+  color: #a84d36;
+  margin-bottom: 12px;
+}

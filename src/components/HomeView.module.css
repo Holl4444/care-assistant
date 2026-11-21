@@ -25,16 +25,28 @@
   color: rgba(255, 255, 255, 0.78);
 }
 :global(.sun-mark) {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 72px;
   width: 72px;
   height: 72px;
   margin-right: -6px;
   border-radius: 50%;
   color: #fff4c7;
   background: rgba(255, 255, 255, 0.13);
-  font-size: 3.8rem;
-  line-height: 1;
+}
+:global(.sun-mark svg) {
+  width: 46px;
+  height: 46px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+:global(.sun-mark svg circle) {
+  fill: currentColor;
+  stroke: none;
 }
 :global(.section-heading) {
   display: flex;

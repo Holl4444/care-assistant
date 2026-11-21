@@ -100,15 +100,35 @@
   background: #f2f7f1;
 }
 :global(.check-mark) {
-  display: grid;
-  place-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 24px;
+  width: 24px;
   height: 24px;
+  padding: 0;
   margin-left: auto;
   border: 1px solid #cbd9d1;
   border-radius: 50%;
   color: var(--teal);
+  font-size: 1.1rem;
   font-weight: 700;
+}
+:global(.option-card:not(.selected) .check-mark)::before,
+:global(.option-card:not(.selected) .check-mark)::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  border-radius: 1px;
+}
+:global(.option-card:not(.selected) .check-mark)::before {
+  width: 10px;
+  height: 2px;
+}
+:global(.option-card:not(.selected) .check-mark)::after {
+  width: 2px;
+  height: 10px;
 }
 :global(.option-card.selected .check-mark) {
   color: white;

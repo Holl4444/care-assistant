@@ -24,16 +24,12 @@ export default function PlannerView({
     (selection) => (selection || []).length > 0,
   );
   return (
-    <section
-      className={`view active ${styles.planner}`}
-      aria-labelledby="planner-title"
-    >
+    <section className={`view active ${styles.planner}`} aria-labelledby="planner-title">
       <div className="page-heading">
         <p className="eyebrow">Build today’s plan</p>
         <h2 id="planner-title">Choose a few gentle activities</h2>
         <p className="muted">
-          Select a few options for each part of the day, then save the whole
-          plan once.
+          Select a few options for each part of the day, then save the whole plan once.
         </p>
       </div>
       <div className="stage-tabs">
@@ -49,9 +45,7 @@ export default function PlannerView({
           </button>
         ))}
       </div>
-      <div className="selection-status">
-        {draftSelection.length} of 3 selected
-      </div>
+      <div className="selection-status">{draftSelection.length} of 3 selected</div>
       <div className={`option-list ${styles.options}`}>
         {activities.map((activity) => {
           const selected = draftSelection.includes(activity.title);
@@ -77,7 +71,7 @@ export default function PlannerView({
                 <small>{activity.text}</small>
               </span>
               <span className="check-mark" aria-hidden="true">
-                {selected ? "✓" : "+"}
+                {selected ? "✓" : null}
               </span>
             </button>
           );
@@ -103,9 +97,7 @@ export default function PlannerView({
                 <div>
                   <h3>{stage.label}</h3>
                   <p>
-                    {items.length
-                      ? `${items.length} activities planned`
-                      : "Nothing chosen yet"}
+                    {items.length ? `${items.length} activities planned` : "Nothing chosen yet"}
                   </p>
                 </div>
               </div>
