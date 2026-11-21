@@ -6,28 +6,161 @@
   min-width: 0;
 }
 
-:global(.stage-tabs) { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-bottom: 14px; padding: 5px; border-radius: 16px; background: #e7ece5; }
-:global(.stage-tab) { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 4px; border: 0; border-radius: 12px; color: var(--muted); background: transparent; cursor: pointer; font-size: .73rem; }
-:global(.stage-tab span:first-child) { font-size: 1.15rem; }
-:global(.stage-tab.active) { color: var(--teal-dark); background: var(--paper); box-shadow: var(--shadow); font-weight: 700; }
-:global(.selection-status) { color: var(--muted); font-size: .78rem; margin: 0 2px 9px; }
-:global(.option-list) { display: grid; gap: 8px; margin-bottom: 14px; }
-:global(.option-card) { display: flex; align-items: center; gap: 11px; width: 100%; padding: 11px 12px; border: 1px solid transparent; border-radius: 15px; color: var(--ink); text-align: left; background: var(--paper); box-shadow: var(--shadow); cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease; }
-:global(.option-card:hover), :global(.option-card:focus-visible) { transform: translateY(-2px); border-color: rgba(75,125,114,.35); box-shadow: 0 14px 28px rgba(49,77,67,.13); outline: none; }
-:global(.option-card .activity-icon) { flex: 0 0 38px; margin: 0; }
-:global(.option-card > span:nth-child(2)) { min-width: 0; }
-:global(.option-card strong), :global(.option-card small) { display: block; overflow-wrap: anywhere; }
-:global(.option-card small) { color: var(--muted); font-size: .75rem; margin-top: 3px; }
-:global(.option-card .activity-group) { color: var(--teal); font-size: .62rem; margin: 0 0 3px; }
-:global(.option-card.selected) { border-color: var(--teal); background: #f2f7f1; }
-:global(.check-mark) { display: grid; place-items: center; flex: 0 0 24px; height: 24px; margin-left: auto; border: 1px solid #cbd9d1; border-radius: 50%; color: var(--teal); font-weight: 700; }
-:global(.option-card.selected .check-mark) { color: white; border-color: var(--teal); background: var(--teal); }
-:global(.planned-stages) { display: grid; gap: 8px; margin-top: 20px; }
-:global(.planned-stage) { padding: 13px; border-radius: 15px; background: #f0eee4; }
-:global(.planned-stage > div) { display: flex; align-items: center; gap: 10px; }
-:global(.planned-stage h3) { font-family: Georgia, serif; font-size: 1rem; }
-:global(.planned-stage p) { color: var(--muted); font-size: .74rem; margin-top: 2px; }
-:global(.stage-dot) { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; color: var(--teal-dark); background: var(--paper); }
-:global(.planned-stage ul) { list-style: none; padding: 7px 0 0 44px; margin: 0; }
-:global(.planned-stage li) { color: var(--muted); font-size: .78rem; line-height: 1.4; padding-top: 4px; }
-:global(.planned-stage li::before) { content: "•"; color: var(--teal); margin-right: 7px; }
+:global(.stage-tabs) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin-bottom: 14px;
+  padding: 5px;
+  border-radius: 16px;
+  background: #e7ece5;
+}
+:global(.stage-tab) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border: 0;
+  border-radius: 12px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.73rem;
+}
+:global(.stage-tab span:first-child) {
+  font-size: 1.15rem;
+}
+:global(.stage-tab.active) {
+  color: var(--teal-dark);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  font-weight: 700;
+}
+:global(.selection-status) {
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin: 0 2px 9px;
+}
+:global(.option-list) {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+:global(.option-card) {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  color: var(--ink);
+  text-align: left;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+:global(.option-card:hover),
+:global(.option-card:focus-visible) {
+  transform: translateY(-2px);
+  border-color: rgba(75, 125, 114, 0.35);
+  box-shadow: 0 14px 28px rgba(49, 77, 67, 0.13);
+  outline: none;
+}
+:global(.option-card .activity-icon) {
+  flex: 0 0 38px;
+  margin: 0;
+}
+:global(.option-card > span:nth-child(2)) {
+  min-width: 0;
+}
+:global(.option-card strong),
+:global(.option-card small) {
+  display: block;
+  overflow-wrap: anywhere;
+}
+:global(.option-card small) {
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-top: 3px;
+}
+:global(.option-card .activity-group) {
+  color: var(--teal);
+  font-size: 0.62rem;
+  margin: 0 0 3px;
+}
+:global(.option-card.selected) {
+  border-color: var(--teal);
+  background: #f2f7f1;
+}
+:global(.check-mark) {
+  display: grid;
+  place-items: center;
+  flex: 0 0 24px;
+  height: 24px;
+  margin-left: auto;
+  border: 1px solid #cbd9d1;
+  border-radius: 50%;
+  color: var(--teal);
+  font-weight: 700;
+}
+:global(.option-card.selected .check-mark) {
+  color: white;
+  border-color: var(--teal);
+  background: var(--teal);
+}
+:global(.planned-stages) {
+  display: grid;
+  gap: 8px;
+  margin-top: 20px;
+}
+:global(.planned-stage) {
+  padding: 13px;
+  border-radius: 15px;
+  background: #f0eee4;
+}
+:global(.planned-stage > div) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+:global(.planned-stage h3) {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+:global(.planned-stage p) {
+  color: var(--muted);
+  font-size: 0.74rem;
+  margin-top: 2px;
+}
+:global(.stage-dot) {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  color: var(--teal-dark);
+  background: var(--paper);
+}
+:global(.planned-stage ul) {
+  list-style: none;
+  padding: 7px 0 0 44px;
+  margin: 0;
+}
+:global(.planned-stage li) {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  padding-top: 4px;
+}
+:global(.planned-stage li::before) {
+  content: "•";
+  color: var(--teal);
+  margin-right: 7px;
+}

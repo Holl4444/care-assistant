@@ -8,31 +8,152 @@
   --teal-dark: #35675d;
   --coral: #d98668;
   --shadow: 0 12px 30px rgba(49, 77, 67, 0.08);
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   color: var(--ink);
   background: var(--cream);
 }
 
-* { box-sizing: border-box; }
-body { margin: 0; min-width: 0; background: var(--cream); }
-button { font: inherit; }
-h1, h2, h3, p { margin: 0; }
-h1, h2 { font-family: Georgia, serif; letter-spacing: -0.04em; font-weight: 600; }
-h1 { font-size: 1.65rem; }
-h1 span { color: var(--coral); font-family: sans-serif; font-size: 1.35rem; }
-h2 { font-size: clamp(1.7rem, 6vw, 2.25rem); line-height: 1.08; }
-h3 { font-size: 1rem; line-height: 1.25; }
-.app-shell { max-width: 720px; margin: 0 auto; padding: 28px 20px 104px; }
-.topbar { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; }
-.eyebrow { color: var(--teal); font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 8px; }
-.muted { color: var(--muted); line-height: 1.5; font-size: .92rem; }
-.icon-button { border: 0; border-radius: 50%; width: 42px; height: 42px; background: var(--paper); color: var(--teal-dark); box-shadow: var(--shadow); cursor: pointer; font-size: 1.4rem; }
-.view { display: none; animation: appear .25s ease; }
-.view.active { display: block; }
-.toast { position: fixed; z-index: 4; bottom: 92px; left: 50%; max-width: calc(100% - 40px); padding: 11px 16px; border-radius: 12px; color: white; background: var(--ink); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translate(-50%, 10px); transition: opacity .2s ease, transform .2s ease; font-size: .84rem; }
-.toast.show { opacity: 1; transform: translate(-50%, 0); }
-@keyframes appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-@media (min-width: 620px) { .app-shell { padding-top: 42px; } }
-@media (min-width: 760px) { .app-shell { padding-top: 0; padding-bottom: 40px; } }
-@media (max-width: 380px) { .app-shell { padding-left: 14px; padding-right: 14px; } }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 0;
+  background: var(--cream);
+}
+button {
+  font: inherit;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2 {
+  font-family: Georgia, serif;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+h1 {
+  font-size: 1.65rem;
+}
+h1 span {
+  color: var(--coral);
+  font-family: sans-serif;
+  font-size: 1.35rem;
+}
+h2 {
+  font-size: clamp(1.7rem, 6vw, 2.25rem);
+  line-height: 1.08;
+}
+h3 {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+.app-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 20px 104px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+.eyebrow {
+  color: var(--teal);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.muted {
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+.icon-button {
+  border: 0;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  background: var(--paper);
+  color: var(--teal-dark);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+.view {
+  display: none;
+  animation: appear 0.25s ease;
+}
+.view.active {
+  display: block;
+}
+.toast {
+  position: fixed;
+  z-index: 4;
+  bottom: 92px;
+  left: 50%;
+  max-width: calc(100% - 40px);
+  padding: 11px 16px;
+  border-radius: 12px;
+  color: white;
+  background: var(--ink);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 10px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  font-size: 0.84rem;
+}
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 620px) {
+  .app-shell {
+    padding-top: 42px;
+  }
+}
+@media (min-width: 760px) {
+  .app-shell {
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 380px) {
+  .app-shell {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
