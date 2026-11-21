@@ -31,9 +31,15 @@ export default function PlannerView({
   }, []);
 
   const draftSelection = draftSelections[activeStage] || [];
-  const hasSelections = Object.values(draftSelections).some(
-    (selection) => (selection || []).length > 0,
-  );
+  const hasChanges = stages.some((stage) => {
+    const saved = day.plans[stage.id] || [];
+    const draft = draftSelections[stage.id] || [];
+    return (
+      saved.length !== draft.length ||
+      saved.some((title) => !draft.includes(title)) ||
+      draft.some((title) => !saved.includes(title))
+    );
+  });
   return (
     <section className={`view active ${styles.planner}`} aria-labelledby="planner-title">
       <div className="page-heading">
@@ -89,35 +95,10 @@ export default function PlannerView({
           );
         })}
       </div>
-      <PrimaryButton disabled={!hasSelections} onClick={onSave}>
-        Add to today’s activities
-      </PrimaryButton>
-      <div className="planned-stages">
-        {stages.map((stage) => {
-          const items = day.plans[stage.id] || [];
-          return (
-            <section className="planned-stage" key={stage.id}>
-              <div>
-                <span className="stage-dot" aria-hidden="true">
-                  {stage.icon}
-                </span>
-                <div>
-                  <h3>{stage.label}</h3>
-                  <p>
-                    {items.length ? `${items.length} activities planned` : "Nothing chosen yet"}
-                  </p>
-                </div>
-              </div>
-              {items.length ? (
-                <ul>
-                  {items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              ) : null}
-            </section>
-          );
-        })}
+      <div className={styles.saveAction}>
+        <PrimaryButton disabled={!hasChanges} onClick={onSave}>
+          Add to today’s activities
+        </PrimaryButton>
       </div>
       {showBackToTop && (
         <button
