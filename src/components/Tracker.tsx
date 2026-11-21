@@ -42,7 +42,13 @@ export default function Tracker({ day, onToggle, onRemove }: Props) {
                     className="remove-activity"
                     type="button"
                     aria-label={`Remove ${title} from ${stage.label}`}
-                    onClick={() => onRemove(stage.id, title)}
+                    onMouseDown={(event) => event.preventDefault()}
+                    onPointerDown={(event) => event.stopPropagation()}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      event.stopPropagation();
+                      onRemove(stage.id, title);
+                    }}
                   >
                     ×
                   </button>

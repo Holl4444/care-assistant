@@ -23,18 +23,18 @@
   flex: 0 0 42px;
   height: 42px;
   border-radius: 13px;
-  color: var(--teal-dark);
+  color: var(--main);
   background: var(--soft);
   font-size: 1.4rem;
 }
 :global(.interest-item:nth-child(2) .interest-icon) {
-  background: #fae9df;
+  background: var(--accent-one-soft);
 }
 :global(.interest-item:nth-child(3) .interest-icon) {
-  background: #e8e5f1;
+  background: var(--accent-two-soft);
 }
 :global(.interest-item:nth-child(4) .interest-icon) {
-  background: #f6edce;
+  background: var(--accent-two-soft);
 }
 :global(.interest-item p) {
   color: var(--muted);

@@ -13,7 +13,7 @@
   margin-bottom: 14px;
   padding: 5px;
   border-radius: 16px;
-  background: #e7ece5;
+  background: var(--soft);
 }
 :global(.stage-tab) {
   display: flex;
@@ -32,7 +32,7 @@
   font-size: 1.15rem;
 }
 :global(.stage-tab.active) {
-  color: var(--teal-dark);
+  color: var(--main-dark);
   background: var(--paper);
   box-shadow: var(--shadow);
   font-weight: 700;
@@ -69,8 +69,8 @@
 :global(.option-card:hover),
 :global(.option-card:focus-visible) {
   transform: translateY(-2px);
-  border-color: rgba(75, 125, 114, 0.35);
-  box-shadow: 0 14px 28px rgba(49, 77, 67, 0.13);
+  border-color: rgba(227, 178, 60, 0.7);
+  box-shadow: 0 14px 28px rgba(66, 62, 55, 0.16);
   outline: none;
 }
 :global(.option-card:focus-visible) {
@@ -104,8 +104,8 @@
   margin: 0 0 3px;
 }
 :global(.option-card.selected) {
-  border-color: var(--teal);
-  background: #f2f7f1;
+  border-color: var(--main);
+  background: var(--accent-two-soft);
 }
 :global(.check-mark) {
   position: relative;
@@ -117,7 +117,7 @@
   height: 24px;
   padding: 0;
   margin-left: auto;
-  border: 1px solid #cbd9d1;
+  border: 1px solid var(--accent-two);
   border-radius: 50%;
   color: var(--teal);
   font-size: 1.1rem;
@@ -139,9 +139,9 @@
   height: 10px;
 }
 :global(.option-card.selected .check-mark) {
-  color: white;
-  border-color: var(--teal);
-  background: var(--teal);
+  color: var(--main-dark);
+  border-color: var(--accent-one);
+  background: var(--accent-one);
 }
 :global(.planned-stages) {
   display: grid;
@@ -151,7 +151,7 @@
 :global(.planned-stage) {
   padding: 13px;
   border-radius: 15px;
-  background: #f0eee4;
+  background: var(--soft);
 }
 :global(.planned-stage > div) {
   display: flex;
@@ -191,4 +191,20 @@
   content: "•";
   color: var(--teal);
   margin-right: 7px;
+}
+.floating {
+  position: fixed;
+  z-index: 5;
+  right: max(20px, calc((100vw - 720px) / 2 + 20px));
+  bottom: 94px;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--paper);
+  background: var(--accent-one);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
 }

@@ -5,7 +5,7 @@ type Props = { view: View; onChange: (view: View) => void; isOwner: boolean };
 const baseItems: Array<[View, string, string]> = [
   ["home", "⌂", "Home"],
   ["planner", "☷", "Plan"],
-  ["log", "♡", "Care log"],
+  ["log", "▣", "Care log"],
   ["tips", "♡", "Care tips"],
   ["projects", "✦", "Projects"],
   ["about", "i", "Allan"],
@@ -29,6 +29,11 @@ export default function BottomNav({ view, onChange, isOwner }: Props) {
             {id === "home" ? (
               <svg viewBox="0 0 24 24" focusable="false">
                 <path d="M3 11.5 12 4l9 7.5M5.5 10v9h13v-9M9.5 19v-6h5v6" />
+              </svg>
+            ) : id === "log" ? (
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4 5.5c3-1 6-.5 8 1.5v12c-2-2-5-2.5-8-1.5v-12Z" />
+                <path d="M20 5.5c-3-1-6-.5-8 1.5v12c2-2 5-2.5 8-1.5v-12Z" />
               </svg>
             ) : (
               icon

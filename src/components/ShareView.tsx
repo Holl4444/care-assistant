@@ -33,8 +33,8 @@ export default function ShareView({ onMessage }: Props) {
           <QRCodeSVG
             value={appUrl}
             size={220}
-            bgColor="#fffdf8"
-            fgColor="#243a36"
+            bgColor="#EDEBD7"
+            fgColor="#423E37"
             level="M"
             includeMargin
           />

@@ -47,3 +47,17 @@ The owner Share view opens and copies the `/carer` URL. MongoDB credentials stay
 ## MongoDB
 
 The API uses MongoDB collections named `carer_logs` and `project_ideas` in the `CarekinDb` database. Configure `MONGODB_URI` and `MONGODB_DB` on Vercel or your local machine.
+
+## Colour plan
+
+The test palette is defined as semantic roles in `src/styles.css`:
+
+| Role | Colour | Use |
+| --- | --- | --- |
+| Main | `#6E675F` muted taupe | Welcome card and structural neutral surfaces |
+| Secondary | `#423E37` charcoal brown | Main text, headings, and navigation |
+| Accent 1 | `#E3B23C` warm gold | All filled buttons, sunflower sun mark, active selections, and completion controls |
+| Accent 2 | `#A39594` dusty mauve | Decorative accents and soft emphasis |
+| Light | `#EDEBD7` parchment | Page backgrounds, cards, and neutral surfaces |
+
+Keep accent colours as accents rather than text or large background fills. Use the existing paper, cream, soft sage, and ink tones for neutral surfaces and long-form text.
