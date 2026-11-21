@@ -13,7 +13,12 @@ import { usePwaInstall } from "./hooks/usePwaInstall";
 import styles from "./App.module.css";
 
 export default function App() {
-  const isOwner = window.location.pathname.startsWith("/owner");
+  if (window.location.pathname.startsWith("/owner")) {
+    localStorage.setItem("carekin-owner", "true");
+  }
+  const isOwner =
+    window.location.pathname.startsWith("/owner") ||
+    localStorage.getItem("carekin-owner") === "true";
   const [view, setView] = useState<View>("home");
   const [toast, setToast] = useState("");
   const {
