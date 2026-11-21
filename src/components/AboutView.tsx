@@ -3,16 +3,13 @@ import styles from "./AboutView.module.css";
 
 export default function AboutView() {
   return (
-    <section
-      className={`view active ${styles.content}`}
-      aria-labelledby="about-title"
-    >
+    <section className={`view active ${styles.content}`} aria-labelledby="about-title">
       <div className="page-heading">
         <p className="eyebrow">A little more about him</p>
         <h2 id="about-title">Did you know about Allan?</h2>
         <p className="muted">
-          Familiar interests can be a lovely way to start a conversation, even
-          when Allan cannot reply.
+          Familiar interests can be a lovely way to start a conversation, even when Allan cannot
+          reply.
         </p>
       </div>
       <div className="interest-list">
@@ -35,8 +32,8 @@ export default function AboutView() {
         <div>
           <h3>Keep discovering</h3>
           <p>
-            Add the small details that make Allan Allan — favourite places,
-            people, foods, stories and nicknames.
+            Add the small details that make Allan Allan — favourite places, people, foods, stories
+            and nicknames.
           </p>
         </div>
       </section>
